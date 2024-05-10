@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "name": "Muhammad Umair",
+      "email": "umairnaeem373@gmail.com",
+      "git": "umairnaeem373",
+      "password": "605615",
+      "confirm": "605615",
+      "id": 1,
+      "posts": [
+        {}
+      ],
+      "profile": {
+        "career": "developer",
+        "company": "VCT",
+        "address": "Gulberg,Lahore",
+        "skills": "HTML, CSS, Tailwind, JavaScript, React, Redux, MongoDB, Express, Node",
+        "bio": "A Junior Developer eager to learn something new"
+      },
+      "experience": [
+        {
+          "title": "Junior Developer",
+          "company": "VCT",
+          "location": "Lahore",
+          "date": "2024-05-11",
+          "bio": "A Junior Developer for now"
+        }
+      ],
+      "education": [
+        {
+          "school": "MPS",
+          "degree": "Maticulation",
+          "feild": "Computer Sc.",
+          "date": "2013-04-11"
+        },
+        {
+          "school": "GCS",
+          "degree": "Inter",
+          "feild": "CS",
+          "date": "2015-05-11"
+        }
+      ]
+    }
+  ]
+}
