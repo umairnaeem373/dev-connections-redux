@@ -7,9 +7,7 @@ import { useSelector ,useDispatch } from "react-redux";
 import { deleteUser, getUser } from "../Actions/Actions";
 
 function Dashboard() {
-  const State=useSelector(e=>e.single)
-  console.log("state",State);
-  
+  const State=useSelector(e=>e.single)  
   
   const navigate=useNavigate()
   const dispatch=useDispatch()
@@ -29,8 +27,7 @@ function Dashboard() {
   alert("Account Deleted Successfully")
   navigate('/')
   }
-  
-  console.log(user,'uuu');
+
   return (
     <div className="px-16">
       <NavBar2 />

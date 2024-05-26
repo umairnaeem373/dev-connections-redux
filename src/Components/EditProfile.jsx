@@ -30,7 +30,6 @@ function EditProfile() {
         }
     }
     
-    console.log(Inp,'iiii');
 
 
   return (

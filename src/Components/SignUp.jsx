@@ -19,8 +19,6 @@ function SignUp() {
         })
     }
 
-    console.log(user);
-
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 text-center">Sign Up</h1>

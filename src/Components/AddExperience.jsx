@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 function AddExperience() {
   const State = useSelector((e) => e.single);
-  console.log("state", State);
 
   const dispatch = useDispatch();
   let navigate = useNavigate();

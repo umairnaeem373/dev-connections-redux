@@ -9,11 +9,8 @@ function Developers() {
   const navigate = useNavigate();
 
   const State = useSelector((e) => e.all.users);
-  console.log(State);
 
   const Developers = State.filter((ele) => ele.hasOwnProperty("profile"));
-
-  console.log(Developers, "ok");
 
   React.useEffect(() => {
     dispatch(allUsers());
@@ -34,7 +31,7 @@ function Developers() {
 
       {Developers.map((ele, i) => {
         return (
-          <div className="border py-6 md:py-12 px-6 mb-8 md:px-12 flex flex-wrap flex-col md:flex-row items-center justify-center bg-white shadow-lg">
+          <div className="border rounded-xl py-6 md:py-12 px-6 mb-8 md:px-12 flex flex-wrap flex-col md:flex-row items-center justify-center bg-white shadow-lg">
             <div className="w-48 h-48 bg-red-500 rounded-full">
               <img
                 className="h-full w-full rounded-full object-cover"
@@ -45,7 +42,7 @@ function Developers() {
                 alt=""
               />
             </div>
-            <div className="md:flex border md:ms-4 border-red-300 lg:w-[400px] mt-4 lg:ms-8 items-center ">
+            <div className="md:flex border md:ms-4 border-gray-300 rounded bg-gray-100 lg:w-[400px] mt-4 lg:ms-8 items-center ">
               <div className="  w-[200px] p-4 md:p-3 text-center">
                 <h2 className="text-2xl font-bold">{ele.name}</h2>
                 <p className="text-lg mb-3 mt-1">

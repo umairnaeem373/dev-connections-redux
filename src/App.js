@@ -19,7 +19,7 @@ function App() {
       <Route path="/developers_profile" element={<Developers/>}/>
       <Route path="/sign_in" element={<SignIn/>}/>
       <Route path="/sign_up" element={<SignUp/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route  path="/dashboard" element={<Dashboard/>}/>
       <Route path="/edit-profile" element={<EditProfile/>}/>
       <Route path="/add-experience" element={<AddExperience/>}/>
       <Route path="/add-education" element={<AddEducation/>}/>

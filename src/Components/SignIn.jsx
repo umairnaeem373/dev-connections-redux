@@ -1,10 +1,11 @@
 import React , {useEffect ,useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector ,useDispatch } from 'react-redux';
 import { allUsers } from '../Actions/Actions';
 
 function SignIn() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   
   useEffect(()=>{
     dispatch(allUsers())
@@ -22,7 +23,8 @@ function SignIn() {
     const person=users.find(e=>e.email===Current.email && e.password===Current.password)
     if (person){
        localStorage.setItem('user',JSON.stringify(person))
-      window.location='/dashboard'
+      // window.location='/dashboard'
+      navigate('/dashboard')
     }else{
         alert("Invalid email or password")
     } 
