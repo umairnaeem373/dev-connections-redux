@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NavBar2 from "./NavBar2";
 import { FaCode } from "react-icons/fa";
 import { editProfile, getUser } from "../Actions/Actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,7 +38,6 @@ function AddExperience() {
 
   return (
     <div className="px-16">
-      <NavBar2 />
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
         Add An Experience
       </h1>

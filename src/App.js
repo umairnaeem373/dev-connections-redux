@@ -10,14 +10,16 @@ import AddExperience from './Components/AddExperience';
 import AddEducation from './Components/AddEducation';
 import Posts from './Components/Posts';
 import UserProfile from './Components/UserProfile';
+import NavBar from './Components/NavBar1';
 
 function App() {
   return (
     <div className="App">
+      <NavBar/>
       <Routes>
       <Route exact path="/" element={<HomePage/>}/>
       <Route path="/developers_profile" element={<Developers/>}/>
-      <Route path="/sign_in" element={<SignIn/>}/>
+      <Route path="/login" element={<SignIn/>}/>
       <Route path="/sign_up" element={<SignUp/>}/>
       <Route  path="/dashboard" element={<Dashboard/>}/>
       <Route path="/edit-profile" element={<EditProfile/>}/>

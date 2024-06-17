@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react'
-import NavBar1 from './NavBar1'
 import { useSelector , useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { deleteUser, getUser } from '../Actions/Actions'
@@ -24,8 +23,7 @@ function UserProfile() {
 
 
   return (
-    <div className="px-16">
-      <NavBar1/>
+    <div className="my-16 px-16">
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
       Profile
       </h1>

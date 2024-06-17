@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 function HomePage() {
   return (
     <div>
-        <NavBar1/>
         <div className="bg-gradient-to-br from-blue-400 to-purple-600 h-screen flex flex-col justify-center items-center">
       <h1 className="text-white text-5xl font-extrabold mb-4">DevConnections</h1>
       <h2 className="text-white text-xl text-center max-w-lg mb-8">
@@ -17,7 +16,7 @@ function HomePage() {
              Sign up
         </button>
         </Link>
-        <Link to='/sign_in'>
+        <Link to='/login'>
         <button className="bg-white text-gray-800 px-6 py-3 text-lg rounded-full hover:bg-gray-300 transition duration-300">
           Login
         </button>

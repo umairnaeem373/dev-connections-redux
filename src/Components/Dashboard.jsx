@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from "react";
-import NavBar2 from "./NavBar2";
 import { BsFillPersonFill, BsFillPersonVcardFill } from "react-icons/bs";
 import { FaGraduationCap, FaUserTie } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -29,8 +28,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="px-16">
-      <NavBar2 />
+    <div className="mt-16 px-16">
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
         Dashboard
       </h1>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allUsers } from "../Actions/Actions";
-import NavBar1 from "./NavBar1";
 import { TiTick } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 function Developers() {
@@ -17,8 +16,7 @@ function Developers() {
   }, []);
 
   return (
-    <div className="px-4 sm:px-10 md:px-20 lg:px-40 border py-8 pt-12 md:pt-16 lg:pt-20">
-      <NavBar1 />
+    <div className="px-4 mt-8 sm:px-10 md:px-20 lg:px-40 border py-8 pt-12 md:pt-16 lg:pt-20">
       <h1 className="text-4xl sm:text-5xl lg:text-6xl capitalize text-brown-500 font-semibold text-center">
         Developers
       </h1>

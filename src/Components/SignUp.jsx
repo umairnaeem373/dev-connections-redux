@@ -57,7 +57,7 @@ function SignUp() {
         <button className="bg-[#CF901A] text-white px-4 py-3 rounded-lg w-full hover:bg-yellow-600"
         onClick={()=>{
           dispatch(addUser(user))
-          navigate("/sign_in")
+          navigate("/login")
           
         }}
         >Register</button>

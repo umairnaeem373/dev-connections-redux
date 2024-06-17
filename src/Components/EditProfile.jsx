@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import NavBar2 from "./NavBar2";
 import { BsFillPersonFill } from "react-icons/bs";
 import { editProfile } from "../Actions/Actions";
 import { useDispatch } from "react-redux";
@@ -33,8 +32,7 @@ function EditProfile() {
 
 
   return (
-    <div className="px-16">
-      <NavBar2 />
+    <div className="mt-16 px-16">
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
         Edit your profile
       </h1>

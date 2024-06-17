@@ -1,10 +1,9 @@
 import React,{useEffect, useState} from "react";
-import NavBar2 from "./NavBar2";
 import { editProfile, getUser } from "../Actions/Actions";
 import { useDispatch , useSelector } from "react-redux";
 
 function Posts() {
-    const[Inp,setInp]=useState({})
+    const[Inp,setInp]=useState("")
     const dispatch=useDispatch()
     const State=useSelector(e=>e.single)
 
@@ -28,8 +27,7 @@ function Posts() {
     console.log(State,'ppp');
 
   return (
-    <div className='p-16'>
-    <NavBar2/>
+    <div className='mt-16 p-16'>
     <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
       Posts
       </h1>
