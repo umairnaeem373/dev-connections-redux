@@ -45,7 +45,7 @@ export const getUser = (id) => async (dispatch) => {
 
 export const deleteUser = (id) => async (dispatch) => {
   try {
-   const x = await axios.delete(`https://json-api-wsnl.onrender.com/users/${id}`);
+   const data = await axios.delete(`https://json-api-wsnl.onrender.com/users/${id}`);
     dispatch({ type: "", payload: id });
   } catch (error) {
     console.log("Error in deleting the User", error);
