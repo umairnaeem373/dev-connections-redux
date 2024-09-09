@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { editProfile, getUser } from "../Actions/Actions";
 import { useDispatch, useSelector } from "react-redux";
-import  fbase  from "../firebase";
+import { getStorage  } from "firebase/storage";
+import {fbase} from '../firebase'
 
 function Posts() {
-console.log(fbase,'swipe wipe')
-  // const storage = fbase.storage()
+  
+  const storage = getStorage(fbase)
+  console.log(fbase,storage,'swipe wipe')
   
   const [Inp, setInp] = useState({});
   const dispatch = useDispatch();
