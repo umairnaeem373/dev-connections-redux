@@ -106,7 +106,7 @@ function Posts() {
         State.user?.posts?.map((post, index) => {
           return (
             <div
-              className="flex flex-wrap justify-center items-center flex-col "
+              className="flex border shadow-xl flex-wrap justify-center items-center flex-col "
               key={index}
             >
               {post.title && (
