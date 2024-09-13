@@ -78,6 +78,7 @@ function NavBar1() {
               ? loginOpts.map(({ title, link }) => (
                   <li
                     key={title}
+                    onClick={() => setOpen(false)}
                     className="md:ml-8 text-sm font-medium uppercase md:my-0 my-7"
                   >
                     <Link to={link}>{title}</Link>

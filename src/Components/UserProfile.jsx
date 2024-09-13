@@ -11,6 +11,7 @@ function UserProfile() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log(user,'use effect user')
     dispatch(getUser(id));
   }, [dispatch, id]);
 
@@ -21,13 +22,16 @@ function UserProfile() {
   };
 
   return (
-    <div className="my-16 px-16">
+    <div className="my-16 px-8">
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
         Profile
       </h1>
-      <div className="border">
-        <h1>Username: {user?.name}</h1>
-        <p>Email: {user?.email}</p>
+      <div className="border-2 min-w-64 grid sm:grid-cols-2 py-2 rounded-lg shadow-md *:text-start">
+        <img className="rounded-full h-48 block mx-auto" src={`https://github.com/${user.git}.png`}  alt={`${user.name} profile pic` }/>
+        <div className="mt-4">
+        <h1 className="font-bold text-xl px-4">{user?.name}</h1>
+        <p className="font-semi-bold px-4 py-1"> {user?.email}</p>
+        </div>
       </div>
     </div>
   );

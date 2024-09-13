@@ -28,6 +28,7 @@ function Posts() {
   }, [dispatch, user.id]);
 
   const handleChange = (e) => {
+    console.log(e.target)
     const { name, value, type } = e.target;
     type === "file"
       ? setInp({ ...Inp, [name]: e.target.files[0] })
@@ -90,13 +91,13 @@ function Posts() {
       <h1 className="text-3xl text-left py-2  flex">
         This is where you can view and create posts.
       </h1>
-      <div className="grid border p-2 grid-cols-1 gap-2 sm:grid-cols-3">
+      <div className="grid p-2 grid-cols-1 gap-2 sm:grid-cols-3">
         <input
           onChange={handleChange}
           type="text"
           name="title"
           id="small-input"
-          className="block w-full p-2 text-gray-900 border border-gray-300 bg-gray-50 sm:text-sm focus:ring-blue-500 focus:border-blue-500"
+          className="block w-full p-2 text-gray-900 rounded bg-gray-50 sm:text-sm focus:ring-blue-500 focus:border-blue-500"
         />
         <input
           onChange={handleChange}
@@ -112,7 +113,7 @@ function Posts() {
         >
           Post
         </button>
-        {media && media.name} {progress > 0 && `${progress}% uploaded`}
+        {media && media.name} {progress > 0 && progress < 100 && `${progress}% uploaded`}
       </div>
 
       {State.loading === true ? (
@@ -121,7 +122,7 @@ function Posts() {
         State.user?.posts?.map((post, index) => {
           return (
             <div
-              className="flex border max-w-[80%] mx-auto rounded shadow flex-wrap my-2 p-2 justify-center items-center flex-col "
+              className="flex border min-w-48 max-w-[80%] mx-auto rounded shadow flex-wrap my-2 p-2 justify-center items-center flex-col "
               key={index}
             >
               {post.title && (
