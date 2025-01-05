@@ -28,7 +28,7 @@ function Posts() {
   }, [dispatch, user.id]);
 
   const handleChange = (e) => {
-    console.log(e.target)
+    console.log(e.target.value);
     const { name, value, type } = e.target;
     type === "file"
       ? setInp({ ...Inp, [name]: e.target.files[0] })
@@ -43,7 +43,7 @@ function Posts() {
         } else {
           const storageRef = ref(storage, `myImages/${media.name}`);
           const uploadTask = uploadBytesResumable(storageRef, media);
-  
+
           uploadTask.on(
             "state_changed",
             (snapshot) => {
@@ -66,23 +66,30 @@ function Posts() {
         }
       });
     };
-  
-    addMedia().then(() => {
-      console.log(Inp, "tempDATAT");
-  
-      State.user.posts
-        ? dispatch(
-            editProfile(user.id, {
-              posts: [...State.user.posts, Inp],
-            })
-          )
-        : dispatch(editProfile(user.id, { posts: [Inp] }));
-    }).catch(error => {
-      console.error("Error uploading media:", error);
-    });
-  };
-  ;
 
+    addMedia()
+      .then(() => {
+        console.log(Inp, "tempDATAT");
+
+        State.user.posts
+          ? dispatch(
+              editProfile(user.id, {
+                posts: [...State.user.posts, Inp],
+              })
+            )
+          : dispatch(editProfile(user.id, { posts: [Inp] }));
+      })
+      .catch((error) => {
+        console.error("Error uploading media:", error);
+      })
+      .finally(() => {
+        console.log("Finally");
+        setInp({
+          title:"",
+          media:""
+        });
+      });
+  };
   return (
     <div className="mt-16 p-16">
       <h1 className="text-5xl text-blue-500 text-left py-6 font-bold ">
@@ -94,6 +101,7 @@ function Posts() {
       <div className="grid p-2 grid-cols-1 gap-2 sm:grid-cols-3">
         <input
           onChange={handleChange}
+          value={Inp.title}
           type="text"
           name="title"
           id="small-input"
@@ -109,11 +117,12 @@ function Posts() {
           onClick={handleSubmit}
           disabled={!Inp.media && !Inp.title}
           type="button"
-          className="inline-flex justify-center max-w-[100px] items-center px-4 py-2 text-sm font-medium text-gray-900 bg-orange-400 border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+          className="inline-flex justify-center max-w-[100px] items-center px-4 py-2 text-sm font-medium text-gray-900 bg-orange-400 border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
         >
           Post
         </button>
-        {media && media.name} {progress > 0 && progress < 100 && `${progress}% uploaded`}
+        {media && media.name}{" "}
+        {progress > 0 && progress < 100 && `${progress}% uploaded`}
       </div>
 
       {State.loading === true ? (
@@ -126,13 +135,15 @@ function Posts() {
               key={index}
             >
               {post.title && (
-                <h1 className="text-gray-500 text-start w-full">{post.title}</h1>
+                <h1 className="text-gray-500 text-start w-full">
+                  {post.title}
+                </h1>
               )}
               {post.media && (
                 <img
                   src={post.media}
                   className="max-h-48 max-w-48 rounded  shadow-xl"
-                  alt="post.media"
+                  alt={post.media}
                 />
               )}
             </div>
