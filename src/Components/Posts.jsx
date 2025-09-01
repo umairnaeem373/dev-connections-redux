@@ -14,12 +14,13 @@ function Posts() {
 
   const [Inp, setInp] = useState({});
   const [progress, setProgress] = useState(0);
+  const [preview, setPreview] = useState(null);
+
   const dispatch = useDispatch();
   const State = useSelector((e) => e.single);
 
   const { media } = Inp;
 
-  console.log(State, Inp);
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
@@ -28,11 +29,12 @@ function Posts() {
   }, [dispatch, user.id]);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    console.log(e.target.value,'fcfc');
     const { name, value, type } = e.target;
     type === "file"
       ? setInp({ ...Inp, [name]: e.target.files[0] })
       : setInp((Inp) => ({ ...Inp, [name]: value }));
+    e.target.files && setPreview(URL.createObjectURL(e.target.files[0]));
   };
 
   const handleSubmit = () => {
@@ -69,8 +71,6 @@ function Posts() {
 
     addMedia()
       .then(() => {
-        console.log(Inp, "tempDATAT");
-
         State.user.posts
           ? dispatch(
               editProfile(user.id, {
@@ -83,10 +83,9 @@ function Posts() {
         console.error("Error uploading media:", error);
       })
       .finally(() => {
-        console.log("Finally");
         setInp({
-          title:"",
-          media:""
+          title: "",
+          media: "",
         });
       });
   };
@@ -121,7 +120,10 @@ function Posts() {
         >
           Post
         </button>
-        {media && media.name}{" "}
+        <div className="flex flex-col gap-2 max-w-16">
+        {preview && <img src={preview} alt="preview" />}
+        {media && media.name}
+        </div>
         {progress > 0 && progress < 100 && `${progress}% uploaded`}
       </div>
 
