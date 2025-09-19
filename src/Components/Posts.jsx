@@ -29,7 +29,7 @@ function Posts() {
   }, [dispatch, user.id]);
 
   const handleChange = (e) => {
-    console.log(e.target.value,'fcfc');
+    
     const { name, value, type } = e.target;
     type === "file"
       ? setInp({ ...Inp, [name]: e.target.files[0] })
