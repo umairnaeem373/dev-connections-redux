@@ -23,7 +23,7 @@ function Dashboard() {
 
  const handleClick=(id)=>{
   dispatch(deleteUser(id));
-  alert("Account Deleted Successfully")
+  alert("Account Deleted Successfully...")
   navigate('/')
   }
 
